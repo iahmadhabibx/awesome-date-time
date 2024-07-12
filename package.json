@@ -4,7 +4,7 @@
   "description": "An easy to use date time picker with customizable approach",
   "main": "lib/index.js",
   "scripts": {
-    "build": "babel src --out-dir lib",
+    "build": "babel src --out-dir lib && cp src/index.css lib/",
     "prepublishOnly": "npm run build"
   },
   "repository": {
