@@ -1,0 +1,35 @@
+{
+  "name": "awesome-date-time",
+  "version": "1.0.0",
+  "description": "An easy to use date time picker with customizable approach",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src --out-dir lib",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iahmadhabibx/awesome-date-time.git"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "npm"
+  ],
+  "author": "Ahmad Habib",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iahmadhabibx/easy-date-time/issues"
+  },
+  "homepage": "https://github.com/iahmadhabibx/easy-date-time#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.24.8",
+    "@babel/core": "^7.24.8",
+    "@babel/plugin-syntax-jsx": "^7.24.7",
+    "@babel/preset-env": "^7.24.8",
+    "@babel/preset-react": "^7.24.7",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "tailwindcss": "^3.4.4"
+  }
+}
