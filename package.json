@@ -2,7 +2,7 @@
   "name": "awesome-date-time",
   "version": "1.0.1",
   "description": "An easy to use date time picker with customizable approach",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "babel src --out-dir lib",
     "prepublishOnly": "npm run build"
