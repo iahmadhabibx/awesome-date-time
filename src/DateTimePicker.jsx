@@ -90,17 +90,13 @@ const DateTimePicker = (props) => {
               };
             });
           }}
-          className={`h-10 w-10 text-center transition-all rounded-md text-2xl pt-1.5 ${
+          className={`date ${dt.isDisabled ? "disabled" : ""} ${
             dateTime.date === String(dt.date) &&
             matchedDates.key.toLocaleLowerCase() ===
               dateTime.day.toLocaleLowerCase() &&
             Months[currentMonth] === dateTime.month &&
             String(currentYear) === String(dateTime.year) &&
-            "bg-gray-400"
-          } ${
-            dt.isDisabled
-              ? `pointer-events-none text-gray-500`
-              : `cursor-pointer hover:bg-gray-400`
+            "selected"
           }`}
         >
           {dt.date > 0 ? (dt.isDisabled && hidePastDates ? "" : dt.date) : ""}
@@ -113,21 +109,29 @@ const DateTimePicker = (props) => {
     show && (
       <div
         style={{ background: bgColor }}
-        className="p-2 rounded-sm max-w-full absolute left-0 z-10"
+        className="date-time-picker"
         ref={containerRef}
       >
-        <div className="flex justify-between items-center mb-2">
-          <div className="flex items-center gap-4">
+        <div className="header">
+          <div className="actions">
             <ImCancelCircle
-              className="w-6 h-6 cursor-pointer"
+              style={{
+                width: "26px",
+                height: "26px",
+              }}
+              className="cursor-pointer"
               onClick={() => setShow(false)}
             />
             <span className="text-lg">
               {Months[currentMonth]} - {currentYear}
             </span>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="actions">
             <FiArrowLeft
+              style={{
+                width: "26px",
+                height: "26px",
+              }}
               onClick={() => {
                 if (currentMonth > 0) {
                   setCurrentMonth(currentMonth - 1);
@@ -145,9 +149,12 @@ const DateTimePicker = (props) => {
                   );
                 }
               }}
-              className="cursor-pointer h-12 w-12 p-2 rounded hover:bg-gray-200"
             />
             <FiArrowRight
+              style={{
+                width: "26px",
+                height: "26px",
+              }}
               onClick={() => {
                 if (currentMonth < 11) {
                   setCurrentMonth(currentMonth + 1);
@@ -165,16 +172,15 @@ const DateTimePicker = (props) => {
                   );
                 }
               }}
-              className="cursor-pointer h-12 w-12 p-2 rounded hover:bg-gray-200"
             />
           </div>
         </div>
         <hr />
 
-        <div className="flex justify-between">
+        <div className="dates">
           {React.Children.toArray(
             Days.map((day) => (
-              <div className="flex flex-col items-center">
+              <div className="day">
                 <span className="p-4">{day.substring(0, 1)}</span>
                 {renderDatesListing(day)}
               </div>
@@ -182,13 +188,11 @@ const DateTimePicker = (props) => {
           )}
         </div>
         <hr />
-        <div className="flex flex-wrap max-h-52 overflow-y-auto gap-3">
+        <div className="time-slots">
           {React.Children.toArray(
             timeslots.map((time) => (
               <div
-                className={`${
-                  dateTime.time === time && "bg-gray-400"
-                } cursor-pointer hover:bg-gray-200 p-2 rounded-md text-xl`}
+                className={`time-slot ${dateTime.time === time && "selected"}`}
                 onClick={() => {
                   setDateTime((prev) => {
                     return {

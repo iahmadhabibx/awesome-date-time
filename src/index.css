@@ -1,3 +1,96 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.date-time-picker {
+  padding: 8px;
+  border-radius: 4px;
+  max-width: 100%;
+  position: absolute;
+  left: 0;
+  z-index: 10;
+  background-color: white;
+}
+
+.date-time-picker .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.date-time-picker .header .actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.date-time-picker .header .actions svg {
+  cursor: pointer;
+  height: 48px;
+  width: 48px;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.date-time-picker .header .actions svg:hover {
+  background-color: #e2e2e2;
+}
+
+.date-time-picker .dates {
+  display: flex;
+  justify-content: space-between;
+}
+
+.date-time-picker .dates .day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.date-time-picker .dates .day .date {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  transition: all 0.2s;
+  border-radius: 4px;
+  font-size: 1.12rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.date-time-picker .dates .day .date.disabled {
+  pointer-events: none;
+  color: #d3d3d3;
+}
+
+.date-time-picker .dates .day .date.selected {
+  background-color: #d3d3d3;
+}
+
+.date-time-picker .dates .day .date:hover {
+  background-color: #e2e2e2;
+}
+
+.date-time-picker .time-slots {
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 200px;
+  overflow-y: auto;
+  gap: 12px;
+}
+
+.date-time-picker .time-slots .time-slot {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 1.12rem;
+  transition: background-color 0.2s;
+}
+
+.date-time-picker .time-slots .time-slot.selected {
+  background-color: #d3d3d3;
+}
+
+.date-time-picker .time-slots .time-slot:hover {
+  background-color: #e2e2e2;
+}
