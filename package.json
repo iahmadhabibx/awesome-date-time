@@ -1,6 +1,6 @@
 {
   "name": "awesome-date-time",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "An easy to use date time picker with customizable approach",
   "main": "lib/index.js",
   "scripts": {
