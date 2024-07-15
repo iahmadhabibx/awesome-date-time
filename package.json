@@ -1,6 +1,6 @@
 {
   "name": "awesome-date-time",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "description": "An easy to use date time picker with customizable approach",
   "main": "lib/index.js",
   "scripts": {
@@ -25,6 +25,7 @@
   "devDependencies": {
     "@babel/cli": "^7.24.8",
     "@babel/core": "^7.24.8",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/plugin-syntax-jsx": "^7.24.7",
     "@babel/preset-env": "^7.24.8",
     "@babel/preset-react": "^7.24.7",

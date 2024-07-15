@@ -15,6 +15,7 @@ const DateTimePicker = (props) => {
     show,
     hidePastDates = false,
     timeSlotGap = 15,
+    fontSize = "1.15rem",
     bgColor = "white",
     selected,
     setShow,
@@ -90,6 +91,7 @@ const DateTimePicker = (props) => {
               };
             });
           }}
+          style={{ fontSize }}
           className={`date ${dt.isDisabled ? "disabled" : ""} ${
             dateTime.date === String(dt.date) &&
             matchedDates.key.toLocaleLowerCase() ===
@@ -192,6 +194,7 @@ const DateTimePicker = (props) => {
           {React.Children.toArray(
             timeslots.map((time) => (
               <div
+                style={{ fontSize }}
                 className={`time-slot ${dateTime.time === time && "selected"}`}
                 onClick={() => {
                   setDateTime((prev) => {
@@ -216,7 +219,8 @@ DateTimePicker.propTypes = {
   show: PropTypes.bool.isRequired,
   hidePastDates: PropTypes.bool,
   timeSlotGap: PropTypes.number,
-  selectedColor: PropTypes.string,
+  fontSize: PropTypes.string,
+  bgColor: PropTypes.string,
   selected: PropTypes.string.isRequired,
   setShow: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
