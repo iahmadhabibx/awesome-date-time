@@ -108,6 +108,10 @@ The `DateTimePicker` component allows users to select a date and time within a s
 | `setShow`       | func   | yes      | -       | Function to control the visibility of the picker.     |
 | `onChange`      | func   | yes      | -       | Function to handle changes in the selected date-time. |
 
+
+
+Refer here for [Live Demo](https://stackblitz.com/edit/vitejs-vite-klyjfa?file=index.html,src%2Findex.css,src%2FApp.jsx,package.json&terminal=dev).
+
 ```
 
 ## Conclusion
