@@ -31,5 +31,8 @@
     "@babel/preset-react": "^7.24.7",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1"
+  },
+  "dependencies": {
+    "react-icons": "^5.2.1"
   }
 }
